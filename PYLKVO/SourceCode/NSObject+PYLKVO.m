@@ -142,9 +142,7 @@ void pyl_kvo_setterSEL(NSObject *self, SEL cmd, id newValue) {
         if (observerModel.options & PYLKVOOptionsNew) {
             dict[PYLKVOKeyNew] = endNewValue;
         }
-        if ([observerModel.observer respondsToSelector:@selector(pyl_kvo_observeValueForKeyPath:ofObject:change:)]) {
-            ((void(*)(id,SEL,id,id,id))(void *)objc_msgSend)(observerModel.observer, @selector(pyl_kvo_observeValueForKeyPath:ofObject:change:), observerModel.keypath, rootListener, dict);
-        }
+        ((void(*)(id,SEL,id,id,id))(void *)objc_msgSend)(observerModel.observer, @selector(pyl_kvo_observeValueForKeyPath:ofObject:change:), observerModel.keypath, rootListener, dict);
     }
 }
 
