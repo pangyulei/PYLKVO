@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442FD45C21F0BD3600422A4D /* NSObject+PYLKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 442FD45B21F0BD3600422A4D /* NSObject+PYLKVO.m */; };
 		44F97EE521F0B5E9002A36F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F97EE421F0B5E9002A36F4 /* AppDelegate.m */; };
 		44F97EE821F0B5E9002A36F4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F97EE721F0B5E9002A36F4 /* ViewController.m */; };
 		44F97EEB21F0B5E9002A36F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F97EE921F0B5E9002A36F4 /* Main.storyboard */; };
@@ -14,6 +15,11 @@
 		44F97EF021F0B5E9002A36F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F97EEE21F0B5E9002A36F4 /* LaunchScreen.storyboard */; };
 		44F97EF321F0B5E9002A36F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F97EF221F0B5E9002A36F4 /* main.m */; };
 		44F97EFD21F0B5EA002A36F4 /* PYLKVOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F97EFC21F0B5EA002A36F4 /* PYLKVOTests.m */; };
+		44F97F0921F0B605002A36F4 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F97F0821F0B605002A36F4 /* Person.m */; };
+		44F97F0C21F0B61C002A36F4 /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F97F0B21F0B61C002A36F4 /* Father.m */; };
+		44F97F0F21F0B628002A36F4 /* Daughter.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F97F0E21F0B628002A36F4 /* Daughter.m */; };
+		44F97F1321F0BAF9002A36F4 /* PYLKVOObserverModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F97F1221F0BAF9002A36F4 /* PYLKVOObserverModel.m */; };
+		44F97F1621F0BB52002A36F4 /* NSObject+PYLKVOAttrs.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F97F1521F0BB52002A36F4 /* NSObject+PYLKVOAttrs.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		442FD45A21F0BD3600422A4D /* NSObject+PYLKVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+PYLKVO.h"; sourceTree = "<group>"; };
+		442FD45B21F0BD3600422A4D /* NSObject+PYLKVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PYLKVO.m"; sourceTree = "<group>"; };
 		44F97EE021F0B5E9002A36F4 /* PYLKVO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PYLKVO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F97EE321F0B5E9002A36F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		44F97EE421F0B5E9002A36F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -40,6 +48,16 @@
 		44F97EF821F0B5EA002A36F4 /* PYLKVOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PYLKVOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F97EFC21F0B5EA002A36F4 /* PYLKVOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYLKVOTests.m; sourceTree = "<group>"; };
 		44F97EFE21F0B5EA002A36F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44F97F0721F0B605002A36F4 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		44F97F0821F0B605002A36F4 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		44F97F0A21F0B61C002A36F4 /* Father.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Father.h; sourceTree = "<group>"; };
+		44F97F0B21F0B61C002A36F4 /* Father.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Father.m; sourceTree = "<group>"; };
+		44F97F0D21F0B628002A36F4 /* Daughter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Daughter.h; sourceTree = "<group>"; };
+		44F97F0E21F0B628002A36F4 /* Daughter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Daughter.m; sourceTree = "<group>"; };
+		44F97F1121F0BAF9002A36F4 /* PYLKVOObserverModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYLKVOObserverModel.h; sourceTree = "<group>"; };
+		44F97F1221F0BAF9002A36F4 /* PYLKVOObserverModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYLKVOObserverModel.m; sourceTree = "<group>"; };
+		44F97F1421F0BB52002A36F4 /* NSObject+PYLKVOAttrs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+PYLKVOAttrs.h"; sourceTree = "<group>"; };
+		44F97F1521F0BB52002A36F4 /* NSObject+PYLKVOAttrs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PYLKVOAttrs.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +103,13 @@
 				44F97EE421F0B5E9002A36F4 /* AppDelegate.m */,
 				44F97EE621F0B5E9002A36F4 /* ViewController.h */,
 				44F97EE721F0B5E9002A36F4 /* ViewController.m */,
+				44F97F0721F0B605002A36F4 /* Person.h */,
+				44F97F0821F0B605002A36F4 /* Person.m */,
+				44F97F0A21F0B61C002A36F4 /* Father.h */,
+				44F97F0B21F0B61C002A36F4 /* Father.m */,
+				44F97F0D21F0B628002A36F4 /* Daughter.h */,
+				44F97F0E21F0B628002A36F4 /* Daughter.m */,
+				44F97F1021F0BAB9002A36F4 /* SourceCode */,
 				44F97EE921F0B5E9002A36F4 /* Main.storyboard */,
 				44F97EEC21F0B5E9002A36F4 /* Assets.xcassets */,
 				44F97EEE21F0B5E9002A36F4 /* LaunchScreen.storyboard */,
@@ -101,6 +126,19 @@
 				44F97EFE21F0B5EA002A36F4 /* Info.plist */,
 			);
 			path = PYLKVOTests;
+			sourceTree = "<group>";
+		};
+		44F97F1021F0BAB9002A36F4 /* SourceCode */ = {
+			isa = PBXGroup;
+			children = (
+				44F97F1121F0BAF9002A36F4 /* PYLKVOObserverModel.h */,
+				44F97F1221F0BAF9002A36F4 /* PYLKVOObserverModel.m */,
+				44F97F1421F0BB52002A36F4 /* NSObject+PYLKVOAttrs.h */,
+				44F97F1521F0BB52002A36F4 /* NSObject+PYLKVOAttrs.m */,
+				442FD45A21F0BD3600422A4D /* NSObject+PYLKVO.h */,
+				442FD45B21F0BD3600422A4D /* NSObject+PYLKVO.m */,
+			);
+			path = SourceCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,9 +241,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F97F1321F0BAF9002A36F4 /* PYLKVOObserverModel.m in Sources */,
 				44F97EE821F0B5E9002A36F4 /* ViewController.m in Sources */,
+				44F97F1621F0BB52002A36F4 /* NSObject+PYLKVOAttrs.m in Sources */,
 				44F97EF321F0B5E9002A36F4 /* main.m in Sources */,
+				44F97F0921F0B605002A36F4 /* Person.m in Sources */,
+				44F97F0F21F0B628002A36F4 /* Daughter.m in Sources */,
 				44F97EE521F0B5E9002A36F4 /* AppDelegate.m in Sources */,
+				442FD45C21F0BD3600422A4D /* NSObject+PYLKVO.m in Sources */,
+				44F97F0C21F0B61C002A36F4 /* Father.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
