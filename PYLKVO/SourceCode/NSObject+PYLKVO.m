@@ -15,22 +15,6 @@
 NSString * const PYLKVOKeyNew = @"PYLKVOKeyNew";
 NSString * const PYLKVOKeyOld = @"PYLKVOKeyOld";
 static NSString * const PYLKVOClassPrefix = @"PYLKVOClass_";
-//
-//typedef NS_ENUM(NSInteger) {
-//    PYLKVO_CHAR,
-//    PYLKVO_INT,
-//    PYLKVO_SHORT,
-//    PYLKVO_LONG,
-//    PYLKVO_LONG_LONG,
-//    PYLKVO_BOOL,
-//    PYLKVO_FLOAT,
-//    PYLKVO_DOUBLE,
-//    PYLKVO_UNSIGNED_CHAR,
-//    PYLKVO_UNSIGNED_INT,
-//    PYLKVO_UNSIGNED_SHORT,
-//    PYLKVO_UNSIGNED_LONG,
-//    PYLKVO_UNSIGNED_LONG_LONG,
-//} PYLKVO_TYPE;
 
 @implementation NSObject (PYLKVO)
 
@@ -39,6 +23,7 @@ static NSString * const PYLKVOClassPrefix = @"PYLKVOClass_";
     
     PYLKVOObserverModel *observerModel = [PYLKVOObserverModel new];
     observerModel.observer = observer;
+    observerModel.observerMemAddr = [NSString stringWithFormat:@"%p", observer];
     observerModel.keypath = keyPath;
     observerModel.options = options;
     if (!self.pyl_kvo_observerModels) {
@@ -386,7 +371,25 @@ const char * pyl_kvo_subclassName(Class superclass) {
 
 - (void)pyl_kvo_removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath {
     self.pyl_kvo_observerModels = [[self.pyl_kvo_observerModels filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(PYLKVOObserverModel *obj, NSDictionary<NSString *,id> * _Nullable bindings) {
-        return obj.observer != observer || ![obj.keypath isEqualToString:keyPath];
+        if ([obj.observerMemAddr isEqualToString:[NSString stringWithFormat:@"%p", observer]] && [obj.keypath isEqualToString:keyPath]) {
+            return false;
+        } else {
+            return true;
+        }
+    }]] mutableCopy];
+    if (!self.pyl_kvo_observerModels.count) {
+        //还原 isa
+        object_setClass(self, class_getSuperclass(object_getClass(self)));
+    }
+}
+
+- (void)pyl_kvo_removeObserver:(NSObject *)observer {
+    self.pyl_kvo_observerModels = [[self.pyl_kvo_observerModels filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(PYLKVOObserverModel *obj, NSDictionary<NSString *,id> * _Nullable bindings) {
+        if ([obj.observerMemAddr isEqualToString:[NSString stringWithFormat:@"%p", observer]]) {
+            return false;
+        } else {
+            return true;
+        }
     }]] mutableCopy];
     if (!self.pyl_kvo_observerModels.count) {
         //还原 isa

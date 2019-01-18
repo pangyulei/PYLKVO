@@ -11,6 +11,7 @@
 
 @interface PYLKVOObserverModel : NSObject
 @property (nonatomic, weak) id observer;
+@property (nonatomic, copy) NSString *observerMemAddr;
 @property (nonatomic, copy) NSString *keypath;
 @property (nonatomic, assign) PYLKVOOptions options;
 @end

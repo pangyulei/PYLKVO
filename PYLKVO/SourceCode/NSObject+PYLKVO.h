@@ -20,6 +20,7 @@ extern NSString * const PYLKVOKeyOld;
 @interface NSObject (PYLKVO)
 
 - (void)pyl_kvo_addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(PYLKVOOptions)options;
+- (void)pyl_kvo_removeObserver:(NSObject *)observer;
 - (void)pyl_kvo_removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath;
 - (void)pyl_kvo_observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString*,id> *)change;
 

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Daughter : Person
-@property (nonatomic, assign) NSUInteger age;
+@property (nonatomic, assign) BOOL success;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		442FD45C21F0BD3600422A4D /* NSObject+PYLKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 442FD45B21F0BD3600422A4D /* NSObject+PYLKVO.m */; };
+		44C0495421F1FF64000853A9 /* AnotherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C0495321F1FF64000853A9 /* AnotherViewController.m */; };
 		44F97EE521F0B5E9002A36F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F97EE421F0B5E9002A36F4 /* AppDelegate.m */; };
 		44F97EE821F0B5E9002A36F4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F97EE721F0B5E9002A36F4 /* ViewController.m */; };
 		44F97EEB21F0B5E9002A36F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F97EE921F0B5E9002A36F4 /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 /* Begin PBXFileReference section */
 		442FD45A21F0BD3600422A4D /* NSObject+PYLKVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+PYLKVO.h"; sourceTree = "<group>"; };
 		442FD45B21F0BD3600422A4D /* NSObject+PYLKVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PYLKVO.m"; sourceTree = "<group>"; };
+		44C0495221F1FF64000853A9 /* AnotherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnotherViewController.h; sourceTree = "<group>"; };
+		44C0495321F1FF64000853A9 /* AnotherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnotherViewController.m; sourceTree = "<group>"; };
 		44F97EE021F0B5E9002A36F4 /* PYLKVO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PYLKVO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F97EE321F0B5E9002A36F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		44F97EE421F0B5E9002A36F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 				44F97EE421F0B5E9002A36F4 /* AppDelegate.m */,
 				44F97EE621F0B5E9002A36F4 /* ViewController.h */,
 				44F97EE721F0B5E9002A36F4 /* ViewController.m */,
+				44C0495221F1FF64000853A9 /* AnotherViewController.h */,
+				44C0495321F1FF64000853A9 /* AnotherViewController.m */,
 				44F97F0721F0B605002A36F4 /* Person.h */,
 				44F97F0821F0B605002A36F4 /* Person.m */,
 				44F97F0A21F0B61C002A36F4 /* Father.h */,
@@ -247,6 +252,7 @@
 				44F97EF321F0B5E9002A36F4 /* main.m in Sources */,
 				44F97F0921F0B605002A36F4 /* Person.m in Sources */,
 				44F97F0F21F0B628002A36F4 /* Daughter.m in Sources */,
+				44C0495421F1FF64000853A9 /* AnotherViewController.m in Sources */,
 				44F97EE521F0B5E9002A36F4 /* AppDelegate.m in Sources */,
 				442FD45C21F0BD3600422A4D /* NSObject+PYLKVO.m in Sources */,
 				44F97F0C21F0B61C002A36F4 /* Father.m in Sources */,
