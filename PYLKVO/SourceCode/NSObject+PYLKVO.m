@@ -385,7 +385,13 @@ const char * pyl_kvo_subclassName(Class superclass) {
 }
 
 - (void)pyl_kvo_removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath {
-    
+    self.pyl_kvo_observerModels = [[self.pyl_kvo_observerModels filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(PYLKVOObserverModel *obj, NSDictionary<NSString *,id> * _Nullable bindings) {
+        return obj.observer != observer || ![obj.keypath isEqualToString:keyPath];
+    }]] mutableCopy];
+    if (!self.pyl_kvo_observerModels.count) {
+        //还原 isa
+        object_setClass(self, class_getSuperclass(object_getClass(self)));
+    }
 }
 
 - (void)pyl_kvo_observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString*,id> *)change {
