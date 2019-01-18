@@ -26,18 +26,8 @@
     f.daughter = [Daughter new];
     f.daughter.name = @"jack";
     
-    [f pyl_kvo_addObserver:self forKeyPath:@"daughter.age" options:PYLKVOOptionsNew];
-//    [f addObserver:self forKeyPath:@"daughter.age" options:NSKeyValueObservingOptionNew context:NULL];
-//    printClsMethods(object_getClass(f.daughter));
-    
-//    f.daughter = [Daughter new];
+    [f pyl_kvo_addObserver:self forKeyPath:@"daughter.age" options:PYLKVOOptionsNew|PYLKVOOptionsInitial];
     [f.daughter setAge:4];
-    
-//    //打印 father 的 isa 和 方法列表
-//    int a = 3;
-//    ((void(*)(id,SEL,float))(void*)objc_msgSend)(self,sel_registerName("setBBB:"),a);
-    char a = 'g';
-    NSLog(@"%f", a);
 }
 
 -(void)setBBB:(double)newBBB {

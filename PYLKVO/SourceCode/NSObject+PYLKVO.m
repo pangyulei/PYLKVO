@@ -47,7 +47,7 @@ static NSString * const PYLKVOClassPrefix = @"PYLKVOClass_";
     [self.pyl_kvo_observerModels addObject:observerModel];
     
     if (options & PYLKVOOptionsInitial) {
-        ((void(*)(id,SEL,id,id,id))(void *)objc_msgSend)(self, @selector(pyl_kvo_observeValueForKeyPath:ofObject:change:), keyPath, self, nil);
+        ((void(*)(id,SEL,id,id,id))(void *)objc_msgSend)(observer, @selector(pyl_kvo_observeValueForKeyPath:ofObject:change:), keyPath, self, @{});
     }
 }
 
@@ -174,44 +174,44 @@ void pyl_kvo_set_newValue(IMP imp, id receiver, SEL cmd, id newValue, const char
     NSString *type = [[NSString stringWithUTF8String:typeEncoding] substringFromIndex:@"v24@0:8".length];
     if ([type containsString:[NSString stringWithUTF8String:@encode(char)]]) {
         char c = [newValue charValue];
-        ((void(*)(id,SEL,char))(void *)objc_msgSend)(receiver, cmd, c);
+        ((void(*)(id,SEL,char))(void *)imp)(receiver, cmd, c);
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(short)]]) {
         short s = [newValue shortValue];
-        ((void(*)(id,SEL,short))(void *)objc_msgSend)(receiver, cmd, s);
+        ((void(*)(id,SEL,short))(void *)imp)(receiver, cmd, s);
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(int)]]) {
-        ((void(*)(id,SEL,int))(void *)objc_msgSend)(receiver, cmd, [newValue intValue]);
+        ((void(*)(id,SEL,int))(void *)imp)(receiver, cmd, [newValue intValue]);
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(long)]]) {
-        ((void(*)(id,SEL,long))(void *)objc_msgSend)(receiver, cmd, [newValue longValue]);
+        ((void(*)(id,SEL,long))(void *)imp)(receiver, cmd, [newValue longValue]);
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(long long)]]) {
-        ((void(*)(id,SEL,long long))(void *)objc_msgSend)(receiver, cmd, [newValue longLongValue]);
+        ((void(*)(id,SEL,long long))(void *)imp)(receiver, cmd, [newValue longLongValue]);
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(unsigned char)]]) {
-        ((void(*)(id,SEL,unsigned char))(void *)objc_msgSend)(receiver, cmd, [newValue unsignedCharValue]);
+        ((void(*)(id,SEL,unsigned char))(void *)imp)(receiver, cmd, [newValue unsignedCharValue]);
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(unsigned short)]]) {
-        ((void(*)(id,SEL,unsigned short))(void *)objc_msgSend)(receiver, cmd, [newValue unsignedShortValue]);
+        ((void(*)(id,SEL,unsigned short))(void *)imp)(receiver, cmd, [newValue unsignedShortValue]);
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(unsigned int)]]) {
-        ((void(*)(id,SEL,unsigned int))(void *)objc_msgSend)(receiver, cmd, [newValue unsignedIntValue]);
+        ((void(*)(id,SEL,unsigned int))(void *)imp)(receiver, cmd, [newValue unsignedIntValue]);
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(unsigned long)]]) {
-        ((void(*)(id,SEL,unsigned long))(void *)objc_msgSend)(receiver, cmd, [newValue unsignedLongValue]);
+        ((void(*)(id,SEL,unsigned long))(void *)imp)(receiver, cmd, [newValue unsignedLongValue]);
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(unsigned long long)]]) {
-        ((void(*)(id,SEL,unsigned long long))(void *)objc_msgSend)(receiver, cmd, [newValue unsignedLongLongValue]);
+        ((void(*)(id,SEL,unsigned long long))(void *)imp)(receiver, cmd, [newValue unsignedLongLongValue]);
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(BOOL)]]) {
-        ((void(*)(id,SEL,BOOL))(void *)objc_msgSend)(receiver, cmd, [newValue boolValue]);
+        ((void(*)(id,SEL,BOOL))(void *)imp)(receiver, cmd, [newValue boolValue]);
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(float)]]) {
-        ((void(*)(id,SEL,float))(void *)objc_msgSend)(receiver, cmd, [newValue floatValue]);
+        ((void(*)(id,SEL,float))(void *)imp)(receiver, cmd, [newValue floatValue]);
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(double)]]) {
-        ((void(*)(id,SEL,double))(void *)objc_msgSend)(receiver, cmd, [newValue doubleValue]);
+        ((void(*)(id,SEL,double))(void *)imp)(receiver, cmd, [newValue doubleValue]);
     }
     
 }
@@ -353,10 +353,10 @@ IMP pyl_kvo_impWithTypeEncoding(const char * typeEncoding) {
         return (IMP)pyl_kvo_setter_unsigned_int;
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(unsigned long long)]]) {
-        return (IMP)pyl_kvo_setter_unsigned_long;
+        return (IMP)pyl_kvo_setter_unsigned_long_long;
         
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(unsigned long)]]) {
-        return (IMP)pyl_kvo_setter_unsigned_long_long;
+        return (IMP)pyl_kvo_setter_unsigned_long;
     
     } else if ([type containsString:[NSString stringWithUTF8String:@encode(bool)]]) {
         return (IMP)pyl_kvo_setter_bool;
