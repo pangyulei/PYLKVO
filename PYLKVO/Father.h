@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Father : Person
-@property (nonatomic, strong) Daughter *daughter;
+@property (nonatomic, strong) Daughter *daughterA;
 @end
 
 NS_ASSUME_NONNULL_END

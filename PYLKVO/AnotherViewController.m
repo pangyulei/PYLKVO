@@ -34,11 +34,15 @@
     _f = [Father new];
     Father *f = _f;
     f.name = @"john";
-    f.daughter = [Daughter new];
-    f.daughter.name = @"jack";
+    f.daughterA = [Daughter new];
+    f.daughterA.name = @"jack";
     
-    [f pyl_kvo_addObserver:self forKeyPath:@"daughter.success" options:PYLKVOOptionsNew|PYLKVOOptionsInitial];
-    f.daughter.success = false;
+    [f pyl_kvo_addObserver:self forKeyPath:@"daughterA.success" options:PYLKVOOptionsNew|PYLKVOOptionsInitial];
+    [f pyl_kvo_addObserver:self forKeyPath:@"daughterA.name" options:PYLKVOOptionsNew|PYLKVOOptionsInitial];
+    
+    f.daughterA.success = false;
+    f.daughterA.name = @"sim";
+    f.daughterA.name = @"kitty";
 }
 
 - (void)dealloc {

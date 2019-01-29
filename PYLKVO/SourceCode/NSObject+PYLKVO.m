@@ -42,7 +42,10 @@ static NSString * const PYLKVOClassPrefix = @"PYLKVOClass_";
     for (NSUInteger i = 0; i < attrs.count; i++) {
         NSString *attrName = attrs[i];
         SEL getAttrSEL = sel_registerName(attrName.UTF8String);
-        SEL setAttrSEL = sel_registerName([NSString stringWithFormat:@"set%@:", attrName.capitalizedString].UTF8String);
+        
+        NSString *capitalLetter = [[attrName substringToIndex:1] capitalizedString];
+        SEL setAttrSEL = sel_registerName([NSString stringWithFormat:@"set%@%@:", capitalLetter, [attrName substringFromIndex:1]].UTF8String);
+        
         if ([previousObj respondsToSelector:setAttrSEL]) {
             [previousObj pyl_kvo_isaSwizzleWithSetterSEL:setAttrSEL];
         }

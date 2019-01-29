@@ -21,9 +21,6 @@
     vc.vc = self;
     _vc = vc;
     [self.navigationController pushViewController:vc animated:false];
-    [[NSNotificationCenter defaultCenter] addObserverForName:@"d" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-        NSLog(@"%@", _vc);
-    }];
 }
 
 @end
