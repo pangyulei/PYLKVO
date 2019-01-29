@@ -154,7 +154,9 @@ void pyl_kvo_setter_basic(NSObject *self, SEL cmd, id newValue) {
     }
     
     //调用父类实现设置新值
-    IMP superIMP = class_getMethodImplementation(class_getSuperclass(object_getClass(self)), cmd);
+    Class selfClass = object_getClass(self);
+    Class superClass = class_getSuperclass(selfClass);
+    IMP superIMP = class_getMethodImplementation(superClass, cmd);
     pyl_kvo_set_newValue(superIMP, self, cmd, newValue, typeEncoding);
 }
 
@@ -368,8 +370,13 @@ NSString * pyl_kvo_getterSELName(SEL setterSEL) {
 }
 
 const char * pyl_kvo_subclassName(Class superclass) {
-    NSString *name = [NSString stringWithFormat:@"%@%s", PYLKVOClassPrefix, class_getName(superclass)];
-    return name.UTF8String;
+    NSString *superclassName = [NSString stringWithUTF8String:class_getName(superclass)];
+    if ([superclassName hasPrefix:PYLKVOClassPrefix]) {
+        return superclassName.UTF8String;
+    } else {
+        NSString *name = [NSString stringWithFormat:@"%@%@", PYLKVOClassPrefix, superclassName];
+        return name.UTF8String;
+    }
 }
 
 - (void)pyl_kvo_removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath {
